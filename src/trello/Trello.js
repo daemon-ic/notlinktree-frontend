@@ -7,18 +7,18 @@ const Trello = ({ list }) => {
   const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
+    const axiosGetCards = async () => {
+      try {
+        const response = await axios.get(DOMAIN + `/${list}/get-cards`);
+        if (response && response.data) setCardList(response.data);
+      } catch (error) {
+        console.log("error getting cards", error);
+      }
+    };
+
     console.log("useEffect fired!");
     axiosGetCards();
   }, []);
-
-  const axiosGetCards = async () => {
-    try {
-      const response = await axios.get(DOMAIN + `/${list}/get-cards`);
-      if (response && response.data) setCardList(response.data);
-    } catch (error) {
-      console.log("error getting cards", error);
-    }
-  };
 
   const axiosGetAttachments = async (id) => {
     try {
