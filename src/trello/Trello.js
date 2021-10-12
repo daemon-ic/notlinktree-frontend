@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import BaseButton from "../components/BaseButton";
 import axios from "axios";
-import { DOMAIN } from "./constants";
+
+const DOMAIN = process.env.REACT_APP_API_URL;
 
 const Trello = ({ list }) => {
   const [cardList, setCardList] = useState([]);
