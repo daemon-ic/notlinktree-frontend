@@ -4,16 +4,7 @@ import Trello from "../trello/Trello";
 
 const Projects = ({ setPage }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center ",
-        height: "100vh",
-        width: "100vw",
-      }}
-    >
+    <>
       <div
         style={{
           display: "flex",
@@ -46,7 +37,7 @@ const Projects = ({ setPage }) => {
       >
         <Trello list={"projects"} />
       </div>
-    </div>
+    </>
   );
 };
 
