@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 body {
+  background-color: rgba(74, 98, 110, 1) 0.3%;
   overscroll-behavior: none;
   background-image: radial-gradient(
     circle farthest-corner at -4% -12.9%,

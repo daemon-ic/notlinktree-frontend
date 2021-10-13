@@ -32,6 +32,15 @@ const Trello = ({ list }) => {
     }
   };
 
+  function openLink(url) {
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.style.visibility = "hidden";
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  }
+
   const manageLink = async (card) => {
     let cardName = card.name.toLowerCase();
     let URL = card.desc;
@@ -41,9 +50,8 @@ const Trello = ({ list }) => {
       if (!attachments[0]) return;
       const firstAttachmentName = attachments[0].fileName;
       const firstAttachmentId = attachments[0].id;
-      window.open(
-        `https://api.trello.com/1/cards/${card.id}/attachments/${firstAttachmentId}/download/${firstAttachmentName}`
-      );
+      const url = `https://api.trello.com/1/cards/${card.id}/attachments/${firstAttachmentId}/download/${firstAttachmentName}`;
+      openLink(url);
     }
 
     if (!URL) return;
