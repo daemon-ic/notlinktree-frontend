@@ -71,6 +71,14 @@ const Home = ({ setPage }) => {
         >
           Projects
         </IconButton>
+        <IconButton
+          right
+          onClick={() => {
+            setPage("unfinished");
+          }}
+        >
+          Unfinished
+        </IconButton>
       </div>
     </>
   );

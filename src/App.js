@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import Unfinished from "./pages/Unfinished";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     >
       {page === "home" && <Home setPage={setPage} />}
       {page === "projects" && <Projects setPage={setPage} />}
+      {page === "unfinished" && <Unfinished setPage={setPage} />}
     </div>
   );
 }
